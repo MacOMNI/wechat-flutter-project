@@ -12,9 +12,14 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
-        title: new Text("微信"),
+        title: new Text("Message"),
       ),
-      body: new Text("HomePage"),
+      body: new Center(
+        child: new Text(
+          "Message",
+          style: new TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+        ),
+      ),
     );
   }
 }

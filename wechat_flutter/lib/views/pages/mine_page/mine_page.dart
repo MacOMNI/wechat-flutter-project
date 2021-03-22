@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class MinePage extends StatelessWidget {
@@ -7,9 +9,18 @@ class MinePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
-        title: new Text("我的"),
+          title: new Text("Me"),
+          flexibleSpace: ClipRect(
+            child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 0, sigmaY: 2),
+                child: Container(color: Color(0xff2D2C33))),
+          )),
+      body: new Center(
+        child: new Text(
+          "Me",
+          style: new TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+        ),
       ),
-      body: new Text("HomePage"),
     );
   }
 }

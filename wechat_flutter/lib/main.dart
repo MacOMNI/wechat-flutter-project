@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wechat_flutter/views/pages/mainpage.dart';
+import 'package:wechat_flutter/views/pages/main_page.dart';
 
 void main() {
   runApp(MyApp());
