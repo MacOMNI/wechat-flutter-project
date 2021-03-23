@@ -14,7 +14,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
-          title: new Text("Message"),
+          brightness: Brightness.dark,
+          title: new Text("微信", style: new TextStyle(fontSize: 22)),
           flexibleSpace: ClipRect(
             child: BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 0, sigmaY: 2),

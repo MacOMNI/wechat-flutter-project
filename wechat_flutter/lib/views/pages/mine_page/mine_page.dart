@@ -9,7 +9,8 @@ class MinePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
-          title: new Text("Me"),
+          brightness: Brightness.dark,
+          title: new Text("我", style: new TextStyle(fontSize: 22)),
           flexibleSpace: ClipRect(
             child: BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 0, sigmaY: 2),

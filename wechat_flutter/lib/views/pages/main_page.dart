@@ -15,19 +15,19 @@ class _MainPageState extends State<MainPage> {
   final _pages = [HomePage(), ContactPage(), DiscoverPage(), MinePage()];
   PageController _controller = PageController(initialPage: 0);
   final iconMap = {
-    "Message": {
+    "微信": {
       "select": "assets/images/tabbar/tabbar_message.png",
       "unselect": "assets/images/tabbar/tabbar_message_unselect.png",
     },
-    "Contracts": {
+    "联系人": {
       "select": "assets/images/tabbar/tabbar_contacts.png",
       "unselect": "assets/images/tabbar/tabbar_contacts_unselect.png",
     },
-    "Discover": {
+    "发现": {
       "select": "assets/images/tabbar/tabbar_discover.png",
       "unselect": "assets/images/tabbar/tabbar_discover_unselect.png",
     },
-    "Me": {
+    "我": {
       "select": "assets/images/tabbar/tabbar_me.png",
       "unselect": "assets/images/tabbar/tabbar_me_unselect.png",
     },
