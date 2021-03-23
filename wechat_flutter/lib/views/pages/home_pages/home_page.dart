@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,8 +14,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
-        title: new Text("Message"),
-      ),
+          title: new Text("Message"),
+          flexibleSpace: ClipRect(
+            child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 0, sigmaY: 2),
+                child: Container(color: Color(0xff2D2C33))),
+          )),
       body: new Center(
         child: new Text(
           "Message",

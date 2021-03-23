@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:ui';
 
 class ContactPage extends StatelessWidget {
   const ContactPage({Key key}) : super(key: key);
@@ -7,8 +8,12 @@ class ContactPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
-        title: new Text("Contact"),
-      ),
+          title: new Text("Contact"),
+          flexibleSpace: ClipRect(
+            child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 0, sigmaY: 2),
+                child: Container(color: Color(0xff2D2C33))),
+          )),
       body: new Center(
         child: new Text(
           "Contact",
