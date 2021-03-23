@@ -46,6 +46,8 @@ flutter:
   assets:
     - assets/images/
     - assets/images/tabbar/
+    - assets/images/discover/
+
 
   # To add assets to your application, add an assets section, like this:
   # assets:
