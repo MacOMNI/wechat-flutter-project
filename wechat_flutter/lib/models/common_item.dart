@@ -2,7 +2,7 @@ class CommonItemModel {
   String image;
   String text;
   String haveLine;
-  int sep;
+  String sep;
   CommonItemModel({
     this.image,
     this.text,

@@ -19,16 +19,10 @@ class _CommonCellState extends State<CommonItemWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: BoxConstraints(
-        minWidth: double.infinity,
-        minHeight: widget.height,
-      ),
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: Alignment.center,
-          ),
-        ],
+      padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+      height: widget.height,
+      child: Row(
+        children: [Image.asset(widget.image)],
       ),
     );
   }
