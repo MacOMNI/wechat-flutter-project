@@ -41,11 +41,18 @@ class _CommonCellState extends State<CommonItemWidget> {
             widget.title,
             style: textStyle,
           ),
-          Flexible(child: SizedBox()),
+          Flexible(
+              child: SizedBox(
+            width: double.infinity,
+          )),
           Align(
             alignment: Alignment.centerRight,
-            child: Image.asset("assets/images/common/common_next.png",
-                height: 30, width: 22),
+            child: Image.asset(
+              "assets/images/common/common_next.png",
+              height: 14,
+              width: 9,
+              fit: BoxFit.contain,
+            ),
           )
         ],
       ),
