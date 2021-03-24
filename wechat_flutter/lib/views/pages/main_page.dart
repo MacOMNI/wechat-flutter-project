@@ -39,6 +39,7 @@ class _MainPageState extends State<MainPage> {
     return new Scaffold(
       body: PageView(
         controller: _controller,
+        physics: NeverScrollableScrollPhysics(),
         onPageChanged: (index) {
           setState(() {
             _cur_page_index = index;

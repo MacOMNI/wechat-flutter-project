@@ -64,6 +64,7 @@ class DiscoverPage extends StatelessWidget {
                 filter: ImageFilter.blur(sigmaX: 0, sigmaY: 2),
                 child: Container(color: Color(0xff2D2C33))),
           )),
+      backgroundColor: Color(0xffF0F0F6),
       body: ListView.builder(
         itemCount: _disCoverList.length,
         itemBuilder: (BuildContext context, int index) {
@@ -77,7 +78,7 @@ class DiscoverPage extends StatelessWidget {
           }
           return CommonItemWidget(
             image: model.image,
-            text: model.text,
+            title: model.title,
             height: 44,
           );
         },
