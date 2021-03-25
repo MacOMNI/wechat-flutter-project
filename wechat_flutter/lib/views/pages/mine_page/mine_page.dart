@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:wechat_flutter/models/common_item.dart';
 import 'package:wechat_flutter/views/listItem/common_item_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:wechat_flutter/views/pages/mine_page/header_itemWidget.dart';
 
 const _meList = [
   {"avatar": "", "title": "", "type": "line", "sep": "1"},
@@ -78,6 +79,10 @@ class MinePage extends StatelessWidget {
               height: 20,
               width: double.infinity,
             );
+          }
+          if (model.type == "header") {
+            return HeaderItemWidget(
+                avactar: model.image, name: model.title, wxID: model.name);
           }
           return CommonItemWidget(
             image: model.image,
