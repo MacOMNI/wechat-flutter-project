@@ -3,6 +3,7 @@ import 'package:wechat_flutter/models/common_item.dart';
 import 'package:wechat_flutter/views/listItem/common_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:wechat_flutter/views/pages/mine_page/header_itemWidget.dart';
+import 'package:wechat_flutter/views/pages/mine_page/user_page.dart';
 
 const _meList = [
   {"avatar": "", "title": "", "type": "line", "sep": "1"},
@@ -81,13 +82,27 @@ class MinePage extends StatelessWidget {
             );
           }
           if (model.type == "header") {
-            return HeaderItemWidget(
-                avactar: model.image, name: model.title, wxID: model.name);
+            return InkWell(
+              child: HeaderItemWidget(
+                  avactar: model.image, name: model.title, wxID: model.name),
+              onTap: () {
+                print("Header Tap!");
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => UserPage()));
+              },
+            );
           }
-          return CommonItemWidget(
-            image: model.image,
-            title: model.title,
-            height: 44,
+          return InkWell(
+            child: CommonItemWidget(
+              image: model.image,
+              title: model.title,
+              height: 44,
+            ),
+            onTap: () {
+              print('Common Tap!');
+            },
           );
         },
       ),
