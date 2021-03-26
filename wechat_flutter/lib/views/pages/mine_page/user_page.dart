@@ -25,11 +25,12 @@ class _UserPageState extends State<UserPage> {
           style: new TextStyle(fontSize: 22),
         ),
         leading: IconButton(
-          iconSize: 25,
           alignment: Alignment.center,
           icon: Image.asset(
             "assets/images/navbar/navbar_back.png",
             fit: BoxFit.contain,
+            height: 25,
+            width: 20,
           ),
           onPressed: () {
             Navigator.of(context).pop();
@@ -45,10 +46,6 @@ class _UserPageState extends State<UserPage> {
               }),
         ],
       ),
-    );
-    return Container(
-      alignment: Alignment.center,
-      child: Text("User Page!"),
     );
   }
 }
