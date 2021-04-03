@@ -46,6 +46,19 @@ class _UserPageState extends State<UserPage> {
               }),
         ],
       ),
+      body: new Container(
+        color: Color(0xffB2B2B2),
+        padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+        // width: MediaQuery.of(context).size.width,
+        // height: MediaQuery.of(context).size.height,
+        child: new SizedBox(
+          height: 380,
+          width: 292,
+          child: new Container(
+            color: Colors.white,
+          ),
+        ),
+      ),
     );
   }
 }
