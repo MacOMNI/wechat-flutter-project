@@ -1,4 +1,3 @@
-import 'dart:html';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -24,7 +23,7 @@ class _UserPageState extends State<UserPage> {
             // height: 208,
             child: QrImage(
               data: "MacKunsj",
-              size: MediaQuery.of(context).size.width - 80 * 2,
+              size: MediaQuery.of(context).size.width - 60 * 2,
               version: QrVersions.auto,
             ),
           ))
@@ -71,15 +70,15 @@ class _UserPageState extends State<UserPage> {
             alignment: Alignment.center,
             children: [
               Positioned(
-                  top: 80,
+                  top: 70,
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.all(Radius.circular(5)),
                     ),
-                    width: MediaQuery.of(context).size.width - 80,
+                    width: MediaQuery.of(context).size.width - 60,
                     height:
-                        (MediaQuery.of(context).size.width - 80) / 552 * 769,
+                        (MediaQuery.of(context).size.width - 60) / 552 * 769,
                     child: Column(
                       children: [
                         headRow,
@@ -115,26 +114,41 @@ class _UserPageState extends State<UserPage> {
         SizedBox(
           width: 10,
         ),
-        Container(
-          // padding: EdgeInsets.only(top: 20),
-          //height: 40,
-          child: Text(
-            "MacKunsj",
-            style: TextStyle(color: Colors.black, fontSize: 14),
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Text(
+                    "MacKunsj",
+                    style: TextStyle(fontSize: 17),
+                  ),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Image.asset(
+                    "assets/images/me/user_person.png",
+                    width: 14,
+                    height: 14,
+                    fit: BoxFit.cover,
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 2,
+              ),
+              Text(
+                "ShangHai",
+                style: TextStyle(fontSize: 15),
+              )
+            ],
           ),
         ),
         SizedBox(
           width: 10,
-        ),
-        Container(
-          // padding: EdgeInsets.only(top: 20),
-          child: Positioned(
-              child: Image.asset(
-            "assets/images/me/user_person.png",
-            width: 14,
-            height: 14,
-            fit: BoxFit.cover,
-          )),
         ),
       ],
     ),

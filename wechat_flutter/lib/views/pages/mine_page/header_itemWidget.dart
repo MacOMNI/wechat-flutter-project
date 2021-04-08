@@ -34,6 +34,9 @@ class _HeaderItemWidgetState extends State<HeaderItemWidget> {
                   widget.name,
                   style: TextStyle(fontSize: 17),
                 ),
+                SizedBox(
+                  height: 2,
+                ),
                 Text(
                   widget.wxID,
                   style: TextStyle(fontSize: 15),
