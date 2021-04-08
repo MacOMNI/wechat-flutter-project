@@ -24,38 +24,53 @@ class CommonItemWidget extends StatefulWidget {
 class _CommonCellState extends State<CommonItemWidget> {
   @override
   Widget build(BuildContext context) {
+    Widget header = Row(
+      children: [
+        Image.asset(
+          widget.image,
+          height: 22,
+          width: 22,
+          fit: BoxFit.contain,
+        ),
+        SizedBox(width: 10),
+        Text(
+          widget.title,
+          style: textStyle,
+        ),
+        Flexible(
+            child: SizedBox(
+          width: double.infinity,
+        )),
+        Align(
+          alignment: Alignment.centerRight,
+          child: Image.asset(
+            "assets/images/common/common_next.png",
+            height: 14,
+            width: 9,
+            fit: BoxFit.contain,
+          ),
+        )
+      ],
+    );
+    Widget commonItem(bool haveLine) {
+      if (haveLine == true) {
+        return Container(
+          child: header,
+          decoration: BoxDecoration(
+            border: Border(
+                bottom: BorderSide(width: 0.5, color: Color(0xffD9D9D9))),
+          ),
+        );
+      } else {
+        return header;
+      }
+    }
+
     return Container(
       color: Colors.white,
       padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
       height: widget.height,
-      child: Row(
-        children: [
-          Image.asset(
-            widget.image,
-            height: 22,
-            width: 22,
-            fit: BoxFit.contain,
-          ),
-          SizedBox(width: 10),
-          Text(
-            widget.title,
-            style: textStyle,
-          ),
-          Flexible(
-              child: SizedBox(
-            width: double.infinity,
-          )),
-          Align(
-            alignment: Alignment.centerRight,
-            child: Image.asset(
-              "assets/images/common/common_next.png",
-              height: 14,
-              width: 9,
-              fit: BoxFit.contain,
-            ),
-          )
-        ],
-      ),
+      child: commonItem(widget.haveLine),
     );
   }
 }

@@ -20,14 +20,14 @@ const _meList = [
     "avatar": "assets/images/me/me_album.png",
     "title": "相册",
     "type": "normal",
-    "havline": "0",
+    "havline": "1",
     "sep": "0"
   },
   {
     "avatar": "assets/images/me/me_save.png",
     "title": "收藏",
     "type": "normal",
-    "havline": "0",
+    "havline": "1",
     "sep": "0"
   },
   {
@@ -98,6 +98,7 @@ class MinePage extends StatelessWidget {
             child: CommonItemWidget(
               image: model.image,
               title: model.title,
+              haveLine: (model.haveLine == "1"),
               height: 44,
             ),
             onTap: () {

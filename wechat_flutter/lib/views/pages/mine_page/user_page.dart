@@ -19,8 +19,6 @@ class _UserPageState extends State<UserPage> {
         children: [
           Positioned(
               child: Container(
-            // width: 208,
-            // height: 208,
             child: QrImage(
               data: "MacKunsj",
               size: MediaQuery.of(context).size.width - 60 * 2,

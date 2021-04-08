@@ -16,7 +16,7 @@ const _disCoverList = [
   {
     "avatar": "assets/images/discover/discover_scan.png",
     "title": "扫一扫",
-    "havline": "0",
+    "havline": "1",
     "sep": "0"
   },
   {
@@ -36,7 +36,7 @@ const _disCoverList = [
   {
     "avatar": "assets/images/discover/discover_shopping.png",
     "title": "购物",
-    "havline": "0",
+    "havline": "1",
     "sep": "0"
   },
   {
@@ -79,6 +79,7 @@ class DiscoverPage extends StatelessWidget {
           return CommonItemWidget(
             image: model.image,
             title: model.title,
+            haveLine: model.haveLine == "1",
             height: 44,
           );
         },
