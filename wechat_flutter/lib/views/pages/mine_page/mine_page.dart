@@ -71,8 +71,24 @@ class MinePage extends StatelessWidget {
                 child: Container(color: Color(0xff2D2C33))),
           )),
       backgroundColor: Color(0xffF0F0F6),
-      body: ListView.builder(
+      body: ListView.separated(
         itemCount: _meList.length,
+        separatorBuilder: (BuildContext context, int index) {
+          CommonItemModel model = CommonItemModel.fromJson(_meList[index]);
+          if (model.haveLine == "1") {
+            return Divider(
+              height: 0.5,
+              indent: 65,
+              color: Color(0xffD9D9D9),
+            );
+          } else {
+            return Divider(
+              height: 0,
+              indent: 0,
+              color: Colors.white,
+            );
+          }
+        },
         itemBuilder: (BuildContext context, int index) {
           CommonItemModel model = CommonItemModel.fromJson(_meList[index]);
           if (model.sep == "1") {

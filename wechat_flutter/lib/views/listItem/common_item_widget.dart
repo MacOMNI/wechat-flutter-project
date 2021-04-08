@@ -53,17 +53,17 @@ class _CommonCellState extends State<CommonItemWidget> {
       ],
     );
     Widget commonItem(bool haveLine) {
-      if (haveLine == true) {
-        return Container(
-          child: header,
-          decoration: BoxDecoration(
-            border: Border(
-                bottom: BorderSide(width: 0.5, color: Color(0xffD9D9D9))),
-          ),
-        );
-      } else {
-        return header;
-      }
+      // if (haveLine == true) {
+      //   return Container(
+      //     child: header,
+      //     decoration: BoxDecoration(
+      //       border: Border(
+      //           bottom: BorderSide(width: 0.5, color: )),
+      //     ),
+      //   );
+      // } else {
+      return header;
+      // }
     }
 
     return Container(
