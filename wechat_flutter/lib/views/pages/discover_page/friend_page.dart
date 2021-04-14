@@ -36,24 +36,27 @@ class _FriendPageState extends State<FriendPage> {
       // backgroundColor: Color(0xffF0F0F6),
       body: Stack(
         children: [
-          Text("朋友圈"),
-          Opacity(
-            opacity: 0,
-            child: AppBar(
-              brightness: Brightness.dark,
-              title: Text("朋友圈", style: new TextStyle(fontSize: 22)),
-              leading: IconButton(
-                alignment: Alignment.center,
-                icon: Image.asset(
-                  "assets/images/navbar/navbar_back.png",
-                  fit: BoxFit.contain,
-                  height: 25,
-                  width: 20,
-                ),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
+          ListView(
+            padding: EdgeInsets.only(top: 0),
+            children: [
+              Text("朋友圈"),
+            ],
+          ),
+          AppBar(
+            backgroundColor: Colors.transparent,
+            brightness: Brightness.dark,
+            title: Text("朋友圈", style: new TextStyle(fontSize: 22)),
+            leading: IconButton(
+              alignment: Alignment.center,
+              icon: Image.asset(
+                "assets/images/navbar/navbar_back.png",
+                fit: BoxFit.contain,
+                height: 25,
+                width: 20,
               ),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
             ),
           ),
         ],
