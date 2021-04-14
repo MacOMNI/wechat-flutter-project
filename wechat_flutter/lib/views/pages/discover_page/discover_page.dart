@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:wechat_flutter/models/common_item.dart';
 import 'package:wechat_flutter/views/listItem/common_item_widget.dart';
+import 'package:wechat_flutter/views/pages/discover_page/friend_page.dart';
 
 const _disCoverList = [
   {"avatar": "", "title": "", "havline": "0", "sep": "1"},
@@ -65,13 +66,6 @@ class DiscoverPage extends StatelessWidget {
                 child: Container(color: Color(0xff2D2C33))),
           )),
       backgroundColor: Color(0xffF0F0F6),
-      // body: ListView.builder(
-      //   itemCount: _disCoverList.length,
-      //   itemBuilder: (BuildContext context, int index) {
-
-      //   },
-      // ),
-      //
       body: ListView.separated(
         itemCount: _disCoverList.length,
         separatorBuilder: (BuildContext context, int index) {
@@ -100,10 +94,22 @@ class DiscoverPage extends StatelessWidget {
               width: double.infinity,
             );
           }
-          return CommonItemWidget(
-            image: model.image,
-            title: model.title,
-            height: 44,
+          return InkWell(
+            child: CommonItemWidget(
+              image: model.image,
+              title: model.title,
+              height: 44,
+            ),
+            onTap: () {
+              print(index);
+              if (index == 1) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => FriendPage()),
+                );
+              }
+            },
           );
         },
       ),
