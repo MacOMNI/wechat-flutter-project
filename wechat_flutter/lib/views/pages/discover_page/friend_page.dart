@@ -1,6 +1,9 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+
+import 'package:wechat_flutter/views/pages/discover_page/head_view.dart';
 
 class FriendPage extends StatefulWidget {
   FriendPage({Key key}) : super(key: key);
@@ -10,6 +13,8 @@ class FriendPage extends StatefulWidget {
 }
 
 class _FriendPageState extends State<FriendPage> {
+  ScrollController _scrollController = new ScrollController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,15 +42,16 @@ class _FriendPageState extends State<FriendPage> {
       body: Stack(
         children: [
           ListView(
+            controller: _scrollController,
             padding: EdgeInsets.only(top: 0),
             children: [
-              Text("朋友圈"),
+              HeadViewWidget(),
             ],
           ),
-          AppBar(
-            backgroundColor: Colors.transparent,
+          CupertinoNavigationBar(
             brightness: Brightness.dark,
-            title: Text("朋友圈", style: new TextStyle(fontSize: 22)),
+            middle: Text("朋友圈", style: new TextStyle(fontSize: 22)),
+            // backgroundColor: Colors.transparent,
             leading: IconButton(
               alignment: Alignment.center,
               icon: Image.asset(
