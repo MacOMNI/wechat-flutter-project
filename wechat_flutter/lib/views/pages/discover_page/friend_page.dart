@@ -115,26 +115,26 @@ class _FriendPageState extends State<FriendPage> {
                   Navigator.of(context).pop();
                 },
               ),
-              Center(
+              Expanded(
                 child: Text(
                   "朋友圈",
+                  textAlign: TextAlign.center,
                   style: new TextStyle(fontSize: 22, color: Colors.white),
                 ),
               ),
-              Align(
-                child: IconButton(
-                  alignment: Alignment.centerRight,
-                  icon: Image.asset(
-                    "assets/images/navbar/navbar_back.png",
-                    fit: BoxFit.contain,
-                    height: 25,
-                    width: 20,
-                  ),
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
+              IconButton(
+                padding: EdgeInsets.only(right: 10),
+                alignment: Alignment.centerRight,
+                icon: Image.asset(
+                  "assets/images/navbar/navbar_back.png",
+                  fit: BoxFit.contain,
+                  height: 25,
+                  width: 20,
                 ),
-              )
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
             ],
           ),
         ),
