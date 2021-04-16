@@ -18,7 +18,7 @@ class _HeadViewWidgetState extends State<HeadViewWidget> {
               left: 0,
               top: 0,
               right: 0,
-              bottom: 40,
+              bottom: 20,
               child: Image.asset(
                 "assets/images/discover/moment_bg.png",
                 fit: BoxFit.fill,
