@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:wechat_flutter/models/Friend_model.dart';
+import 'package:wechat_flutter/views/pages/discover_page/friend_item_widget.dart';
 import 'package:wechat_flutter/views/pages/discover_page/head_view.dart';
 
 const APPBAR_SCROLL_OFFSET = 200;
@@ -31,7 +32,6 @@ class _FriendPageState extends State<FriendPage> {
     loadAsset().then((value) {
       var json = jsonDecode(value);
       print("json ${json}");
-
       _friendList = new FriendListModel.fromJson(json);
       // print(_friendList);
       setState(() {});
@@ -62,13 +62,15 @@ class _FriendPageState extends State<FriendPage> {
                   HeadViewWidget(),
                   ListView.separated(
                     padding: EdgeInsets.only(top: 0),
-                    itemCount: 25,
+                    itemCount: _friendList.list.length,
                     separatorBuilder: (BuildContext context, int index) {
                       return Divider();
                     },
                     itemBuilder: (BuildContext context, int index) {
                       return InkWell(
-                        child: Text("    朋友圈  " + "${index}"),
+                        child: FriendItemWidget(
+                          itemData: _friendList.list[index],
+                        ),
                       );
                     },
                     shrinkWrap: true,
