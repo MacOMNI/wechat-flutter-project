@@ -1,9 +1,7 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
-
 import 'package:wechat_flutter/views/pages/discover_page/head_view.dart';
 
 const APPBAR_SCROLL_OFFSET = 100;
@@ -82,7 +80,7 @@ class _FriendPageState extends State<FriendPage> {
     setState(() {
       appBarAlpha = alpha;
     });
-    print(alpha);
+    print('appBarAlpha ${alpha}');
   }
 
 //  flexibleSpace: ClipRect(
@@ -99,7 +97,7 @@ class _FriendPageState extends State<FriendPage> {
           height: navTop + toolBar,
           padding: EdgeInsets.only(top: navTop),
           decoration: BoxDecoration(
-            color: Color(0xff2D2C33),
+            color: Color(0xff2D2C33).withOpacity(appBarAlpha),
           ),
           child: Row(
             children: [
@@ -116,17 +114,23 @@ class _FriendPageState extends State<FriendPage> {
                 },
               ),
               Expanded(
-                child: Text(
-                  "朋友圈",
-                  textAlign: TextAlign.center,
-                  style: new TextStyle(fontSize: 22, color: Colors.white),
+                child: Opacity(
+                  opacity: appBarAlpha,
+                  child: Text(
+                    "朋友圈",
+                    textAlign: TextAlign.center,
+                    style: new TextStyle(
+                        fontSize: 22,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
               ),
               IconButton(
                 padding: EdgeInsets.only(right: 10),
                 alignment: Alignment.centerRight,
                 icon: Image.asset(
-                  "assets/images/navbar/navbar_back.png",
+                  "assets/images/discover/moment_camera.png",
                   fit: BoxFit.contain,
                   height: 25,
                   width: 20,
