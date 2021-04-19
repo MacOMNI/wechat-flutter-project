@@ -1,10 +1,12 @@
+import 'dart:convert';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
+import 'package:wechat_flutter/models/Friend_model.dart';
 import 'package:wechat_flutter/views/pages/discover_page/head_view.dart';
 
-const APPBAR_SCROLL_OFFSET = 100;
+const APPBAR_SCROLL_OFFSET = 200;
 
 class FriendPage extends StatefulWidget {
   FriendPage({Key key}) : super(key: key);
@@ -14,14 +16,27 @@ class FriendPage extends StatefulWidget {
 }
 
 class _FriendPageState extends State<FriendPage> {
-  double appBarAlpha = 0;
-
+  double _appBarAlpha = 0;
+  FriendListModel _friendList = FriendListModel();
   // ScrollController _scrollController = new ScrollController();
+
+  Future<String> loadAsset() async {
+    return await rootBundle
+        .loadString('assets/images/discover/MessageJSON.json');
+  }
 
   @override
   void initState() {
     super.initState();
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
+    loadAsset().then((value) {
+      var json = jsonDecode(value);
+      print("json ${json}");
+
+      _friendList = new FriendListModel.fromJson(json);
+      // print(_friendList);
+      setState(() {});
+    });
+    //SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
   }
 
   @override
@@ -78,9 +93,9 @@ class _FriendPageState extends State<FriendPage> {
       //SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
     }
     setState(() {
-      appBarAlpha = alpha;
+      _appBarAlpha = alpha;
     });
-    print('appBarAlpha ${alpha}');
+    print('_appBarAlpha ${alpha}');
   }
 
 //  flexibleSpace: ClipRect(
@@ -97,7 +112,7 @@ class _FriendPageState extends State<FriendPage> {
           height: navTop + toolBar,
           padding: EdgeInsets.only(top: navTop),
           decoration: BoxDecoration(
-            color: Color(0xff2D2C33).withOpacity(appBarAlpha),
+            color: Color(0xff2D2C33).withOpacity(_appBarAlpha),
           ),
           child: Row(
             children: [
@@ -115,7 +130,7 @@ class _FriendPageState extends State<FriendPage> {
               ),
               Expanded(
                 child: Opacity(
-                  opacity: appBarAlpha,
+                  opacity: _appBarAlpha,
                   child: Text(
                     "朋友圈",
                     textAlign: TextAlign.center,
