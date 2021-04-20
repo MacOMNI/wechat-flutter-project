@@ -18,14 +18,14 @@ class _HeadViewWidgetState extends State<HeadViewWidget> {
               left: 0,
               top: 0,
               right: 0,
-              bottom: 40,
+              bottom: 30,
               child: Image.asset(
                 "assets/images/discover/moment_bg.png",
                 fit: BoxFit.fill,
               )),
           Positioned(
               right: 10,
-              bottom: 15,
+              bottom: 5,
               child: Image.asset(
                 "assets/images/me/me_profile.png",
                 width: 75,
@@ -34,7 +34,7 @@ class _HeadViewWidgetState extends State<HeadViewWidget> {
               )),
           Positioned(
             right: 100,
-            bottom: 50,
+            bottom: 40,
             child: Text(
               "麦克坤",
               style: TextStyle(

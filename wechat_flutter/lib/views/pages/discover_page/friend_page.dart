@@ -42,6 +42,7 @@ class _FriendPageState extends State<FriendPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Stack(
         children: [
           MediaQuery.removePadding(
@@ -61,10 +62,12 @@ class _FriendPageState extends State<FriendPage> {
                 children: [
                   HeadViewWidget(),
                   ListView.separated(
-                    padding: EdgeInsets.only(top: 0),
                     itemCount: _friendList.list.length,
                     separatorBuilder: (BuildContext context, int index) {
-                      return Divider();
+                      return Divider(
+                        color: Color(0xffd8d8d8),
+                        height: 0.5,
+                      );
                     },
                     itemBuilder: (BuildContext context, int index) {
                       return InkWell(
