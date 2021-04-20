@@ -100,11 +100,6 @@ class _FriendPageState extends State<FriendPage> {
     print('_appBarAlpha ${alpha}');
   }
 
-//  flexibleSpace: ClipRect(
-//             child: BackdropFilter(
-//                 filter: ImageFilter.blur(sigmaX: 0, sigmaY: 2),
-//                 child: Container(color: Color(0xff2D2C33))),
-//           )),
   Widget get _appBar {
     double navTop = MediaQueryData.fromWindow(window).padding.top;
     double toolBar = kToolbarHeight;

@@ -1,6 +1,8 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:wechat_flutter/models/Friend_model.dart';
 
+// ignore: must_be_immutable
 class FriendItemWidget extends StatefulWidget {
   FriendModel itemData;
   FriendItemWidget({Key key, this.itemData}) : super(key: key);
@@ -9,6 +11,21 @@ class FriendItemWidget extends StatefulWidget {
 }
 
 class _FriendItemWidgetState extends State<FriendItemWidget> {
+  Widget _loadImageUrl(String url, String placeholder) {
+    return CachedNetworkImage(
+      imageUrl: url,
+      fit: BoxFit.fill,
+      placeholder: (context, url) => Image.asset(
+        placeholder,
+        fit: BoxFit.fill,
+      ),
+      errorWidget: (context, url, error) => Image.asset(
+        placeholder,
+        fit: BoxFit.fill,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,10 +43,8 @@ class _FriendItemWidgetState extends State<FriendItemWidget> {
                 margin: EdgeInsets.fromLTRB(15, 20, 15, 0),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(5),
-                  child: Image.network(
-                    widget.itemData.avactor,
-                    fit: BoxFit.fill,
-                  ),
+                  child: _loadImageUrl(widget.itemData.avactor,
+                      "assets/images/common/common_placeholder.png"),
                 ),
               ),
               Expanded(
