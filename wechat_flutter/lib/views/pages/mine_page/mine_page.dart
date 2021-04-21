@@ -62,7 +62,7 @@ class MinePage extends StatelessWidget {
       appBar: new AppBar(
           brightness: Brightness.dark,
           title: new Text(
-            "发现",
+            "我",
             style: new TextStyle(fontSize: 22),
           ),
           flexibleSpace: ClipRect(

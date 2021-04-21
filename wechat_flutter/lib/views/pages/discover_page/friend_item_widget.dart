@@ -10,6 +10,9 @@ class FriendItemWidget extends StatefulWidget {
   _FriendItemWidgetState createState() => _FriendItemWidgetState();
 }
 
+double _showWidth = 0;
+bool _isShow = false;
+
 class _FriendItemWidgetState extends State<FriendItemWidget> {
   Widget _loadImageUrl(String url) {
     return CachedNetworkImage(
@@ -31,8 +34,16 @@ class _FriendItemWidgetState extends State<FriendItemWidget> {
     );
   }
 
-  Widget _buildPicsWdiget(List<String> pics) {
-    print("pics.length = ${pics.length}");
+  Widget buildDescWdiget(String desc) {
+    if (desc.length > 0) {
+      return Text(desc, style: TextStyle(fontSize: 16));
+    }
+    return SizedBox(
+      height: 0.5,
+    );
+  }
+
+  Widget buildPicsWdiget(List<String> pics) {
     if (pics.length == 1) {
       String url = pics.first;
       return Container(
@@ -57,7 +68,7 @@ class _FriendItemWidgetState extends State<FriendItemWidget> {
     }
     if (pics.length == 3 || pics.length > 4) {
       return Container(
-        margin: EdgeInsets.only(top: 15),
+        // margin: EdgeInsets.only(top: 0),
         child: Wrap(
           spacing: 5,
           runSpacing: 5,
@@ -68,7 +79,46 @@ class _FriendItemWidgetState extends State<FriendItemWidget> {
         ),
       );
     }
-    return Container();
+    return Container(
+      height: 0,
+    );
+  }
+
+  Widget buildCommentListView(List<CommentModel> comments) {
+    return Offstage(
+      offstage: comments.length == 0 ? true : false,
+      child: Wrap(
+        alignment: WrapAlignment.start,
+        runSpacing: 5,
+        children: comments.map((value) => buildCommentWidget(value)).toList(),
+      ),
+    );
+  }
+
+  Widget buildCommentWidget(CommentModel model) {
+    if (model.toUserName.length > 0) {}
+    return Text.rich(TextSpan(
+      children: [
+        TextSpan(
+          text: model.userName +
+              (model.toUserName.length > 0 ? "@" : "") +
+              model.toUserName +
+              " :  ",
+          style: TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.w500,
+              color: Color(0xff566b94)),
+        ),
+        TextSpan(text: model.contentMessage, style: TextStyle(fontSize: 14)),
+      ],
+    ));
+  }
+
+  void tapShow() {
+    _isShow = !_isShow;
+    setState(() {
+      _showWidth = _isShow ? 120 : 0;
+    });
   }
 
   @override
@@ -93,7 +143,7 @@ class _FriendItemWidgetState extends State<FriendItemWidget> {
               ),
               Expanded(
                 child: Container(
-                  margin: EdgeInsets.fromLTRB(0, 20, 20, 0),
+                  margin: EdgeInsets.fromLTRB(0, 10, 20, 0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -105,12 +155,10 @@ class _FriendItemWidgetState extends State<FriendItemWidget> {
                             color: Color(0XFF566B94),
                             fontWeight: FontWeight.w500),
                       ),
-                      SizedBox(height: 5),
-                      Text(
-                        widget.itemData.desc,
-                        style: TextStyle(fontSize: 16),
-                      ),
-                      _buildPicsWdiget(widget.itemData.pics),
+                      SizedBox(
+                          height: widget.itemData.desc.length > 0 ? 5 : 0.5),
+                      buildDescWdiget(widget.itemData.desc),
+                      buildPicsWdiget(widget.itemData.pics),
                       Container(
                         //  margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
                         child: Row(
@@ -133,12 +181,13 @@ class _FriendItemWidgetState extends State<FriendItemWidget> {
                                 width: 20,
                               ),
                               onPressed: () {
-                                Navigator.of(context).pop();
+                                print("Show popview!");
                               },
                             ),
                           ],
                         ),
                       ),
+                      buildCommentListView(widget.itemData.comments),
                       SizedBox(height: 5),
                     ],
                   ),

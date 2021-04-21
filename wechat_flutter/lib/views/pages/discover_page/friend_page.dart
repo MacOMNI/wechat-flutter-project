@@ -100,7 +100,6 @@ class _FriendPageState extends State<FriendPage> {
     setState(() {
       _appBarAlpha = alpha;
     });
-    print('_appBarAlpha ${alpha}');
   }
 
   Widget get _appBar {
