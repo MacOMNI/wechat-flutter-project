@@ -6,7 +6,7 @@
   "desc" : "作为歌手和音乐制作人，他才华出众； 作为演员和时尚领袖，他光芒闪耀。他有风格，有态度，更有魅力。今天，吴亦凡 @Mr_凡先生 成为首位兰蔻亚太区品牌代言人，为品牌注入更多奢华摩登的新活力，并呈现护肤、彩妆与香水的美丽精彩。不同\"凡\"响的幸福旅程即将开始！你，准备好了吗？ \u200B\u200B\u200B\u200B",
   "pics": ["http://news.mydrivers.com/Img/20101001/11525723.jpg"],
   "comments": [{
-                   "toUserName": "小明",
+                   "toUserName": "",
                    "userName": "小李",
                    "contentMessage": "评论这东西不知道怎么用！"
                    },{
@@ -26,7 +26,7 @@
                    "userName": "王五",
                    "contentMessage": "评论这东西不知道怎么用！"
                    },{
-                   "toUserName": "张三",
+                   "toUserName": "",
                    "userName": "王五",
                    "contentMessage": "点击评论试试~~"
                    },{
@@ -49,7 +49,7 @@
                    "userName": "王五",
                    "contentMessage": "点击评论试试~~"
                    },{
-                   "toUserName": "张三",
+                   "toUserName": "",
                    "userName": "王五",
                    "contentMessage": "评论这东西不知道怎么用！"
                    }]
@@ -128,7 +128,7 @@
                    "userName": "王五",
                    "contentMessage": "评论这东西不知道怎么用！"
                    },{
-                   "toUserName": "宝强",
+                   "toUserName": "",
                    "userName": "老王",
                    "contentMessage": "点击评论试试~~"
                    },{
@@ -147,7 +147,7 @@
                    "userName": "王五",
                    "contentMessage": "评论这东西不知道怎么用！"
                    },{
-                   "toUserName": "张三",
+                   "toUserName": "",
                    "userName": "王五",
                    "contentMessage": "点击评论试试~~"
                    },{
@@ -170,7 +170,7 @@
                    "userName": "王五",
                    "contentMessage": "点击评论试试~~"
                    },{
-                   "toUserName": "张三",
+                   "toUserName": "",
                    "userName": "王五",
                    "contentMessage": "评论这东西不知道怎么用！"
                    }]
@@ -181,7 +181,7 @@
   "desc" : "",
   "pics": ["http://img3.duitang.com/uploads/item/201609/02/20160902211500_Exsiu.jpeg"],
   "comments": [{
-                   "toUserName": "李四",
+                   "toUserName": "",
                    "userName": "王五",
                    "contentMessage": "评论这东西不知道怎么用！"
                    },{
@@ -189,7 +189,7 @@
                    "userName": "王五",
                    "contentMessage": "点击评论试试~~"
                    },{
-                   "toUserName": "张三",
+                   "toUserName": "",
                    "userName": "王五",
                    "contentMessage": "评论这东西不知道怎么用！"
                    }]
