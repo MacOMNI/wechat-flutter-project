@@ -1,11 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:wechat_flutter/models/Friend_model.dart';
+import 'package:wechat_flutter/views/pages/discover_page/pop_comment.dart';
 
 // ignore: must_be_immutable
 class FriendItemWidget extends StatefulWidget {
   FriendModel itemData;
-  FriendItemWidget({Key key, this.itemData}) : super(key: key);
+  GlobalKey globalKey;
+  FriendItemWidget({Key key, this.itemData, this.globalKey}) : super(key: key);
   @override
   _FriendItemWidgetState createState() => _FriendItemWidgetState();
 }
@@ -115,10 +117,7 @@ class _FriendItemWidgetState extends State<FriendItemWidget> {
   }
 
   void tapShow() {
-    _isShow = !_isShow;
-    setState(() {
-      _showWidth = _isShow ? 120 : 0;
-    });
+    PopLikeCommentMenu(context: context).Show();
   }
 
   @override
@@ -181,6 +180,7 @@ class _FriendItemWidgetState extends State<FriendItemWidget> {
                                 width: 20,
                               ),
                               onPressed: () {
+                                tapShow();
                                 print("Show popview!");
                               },
                             ),

@@ -18,7 +18,9 @@ class FriendPage extends StatefulWidget {
 
 class _FriendPageState extends State<FriendPage> {
   double _appBarAlpha = 0;
+
   FriendListModel _friendList = FriendListModel();
+
   // ScrollController _scrollController = new ScrollController();
 
   Future<String> loadAsset() async {
@@ -73,6 +75,7 @@ class _FriendPageState extends State<FriendPage> {
                       return InkWell(
                         child: FriendItemWidget(
                           itemData: _friendList.list[index],
+                          globalKey: widget.key,
                         ),
                       );
                     },

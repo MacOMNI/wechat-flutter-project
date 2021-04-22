@@ -106,7 +106,9 @@ class DiscoverPage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (BuildContext context) => FriendPage()),
+                      builder: (BuildContext context) => FriendPage(
+                            key: new GlobalKey(),
+                          )),
                 );
               }
             },
