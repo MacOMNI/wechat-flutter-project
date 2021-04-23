@@ -137,6 +137,7 @@ class _FriendItemWidgetState extends State<FriendItemWidget> {
                       flex: 1,
                       child: GestureDetector(
                         onTap: () {
+                          BotToast.showText(text: "Tap Like button");
                           print("onTapDown 1");
                         },
                         child: Row(
@@ -163,6 +164,8 @@ class _FriendItemWidgetState extends State<FriendItemWidget> {
                     flex: 1,
                     child: GestureDetector(
                         onTap: () {
+                          BotToast.showText(text: "Tap Comment button");
+
                           print("onTapDown 2");
                         },
                         child: Row(
